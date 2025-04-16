@@ -11,7 +11,7 @@ gc = gspread.authorize(credentials)
 
 spreadsheet_url = "https://docs.google.com/spreadsheets/d/1Hmrpoz1EVACFY5lHW7r4v8bEtRRFu8eay7grCojRr3E/edit?gid=0#gid=0"
 sh = gc.open_by_url(spreadsheet_url)
-worksheet = sh.worksheet("tc1")
+worksheet = sh.worksheet("api")
 os_version = platform.platform()
 if 'Windows' in os_version:  # windows인 경우
   param_json_path = os.path.dirname(__file__) + '\\json\\'
@@ -40,7 +40,7 @@ def input_fail(sheet_num, error_reason):
 
 # 앱에서 자동화 테스트 수행
 # 명령어 python -m pytest --cache-clear .\test.py -s
-def test1():
+def test_api():
   from src.product import ProductApi
   product_api = ProductApi()
   try:
