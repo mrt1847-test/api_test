@@ -40,7 +40,7 @@ def input_fail(sheet_num, error_reason):
 
 # 앱에서 자동화 테스트 수행
 # 명령어 python -m pytest --cache-clear .\test.py -s
-def test_api():
+def test_products():
   from src.product_api import ProductAPI
   product_api = ProductAPI()
   try:
